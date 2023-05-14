@@ -1,0 +1,7 @@
+.residents-container {
+  max-height: 250px;
+  overflow-y: scroll;
+}
+.info {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,13 @@
+<div class="info">
+  <p>Name: {{ locationDetails.name }}</p>
+  <p>Type: {{ locationDetails.type }}</p>
+  <p>Dimension: {{ locationDetails.dimension }}</p>
+  <div class="residents-container">
+    Residents:
+    <div *ngFor="let resident of locationDetails.residents">
+      <a [routerLink]="'/characters/' + getIdByLink(resident)">
+        Character {{ getIdByLink(resident) }}</a
+      >
+    </div>
+  </div>
+</div>

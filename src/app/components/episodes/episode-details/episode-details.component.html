@@ -1,0 +1,13 @@
+<div class="info">
+  <p>Name: {{ episodeDetails.name }}</p>
+  <p>Air date: {{ episodeDetails.air_date }}</p>
+  <p>Episode: {{ episodeDetails.episode }}</p>
+  <div class="characters-container">
+    Characters:
+    <div *ngFor="let character of episodeDetails.characters">
+      <a [routerLink]="'/characters/' + getIdByLink(character)">
+        Character {{ getIdByLink(character) }}</a
+      >
+    </div>
+  </div>
+</div>

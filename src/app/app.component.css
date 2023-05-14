@@ -1,0 +1,17 @@
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.main {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 5px;
+  min-height: 80vh;
+}
+
+.navigation {
+  max-width: 300px;
+  min-width: 200px;
+}

@@ -1,0 +1,13 @@
+.image {
+  height: 300px;
+  float: left;
+}
+.episodes-container {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+.info {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  float: right;
+  margin: 0px 20px;
+}

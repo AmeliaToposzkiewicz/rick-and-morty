@@ -1,0 +1,48 @@
+<img
+  [src]="characterDetails.image"
+  [alt]="characterDetails.name"
+  class="image"
+/>
+<div class="info">
+  <p>Name: {{ characterDetails.name }}</p>
+  <p>Status: {{ characterDetails.status }}</p>
+  <p>Species: {{ characterDetails.species }}</p>
+  <p>Type: {{ characterDetails.type }}</p>
+  <p>Gender:{{ characterDetails.gender }}</p>
+  <p>
+    Origin:
+    <ng-container *ngIf="characterDetails.origin.url; else noName">
+      <a
+        [routerLink]="'/locations/' + getIdByLink(characterDetails.origin.url)"
+      >
+        {{ characterDetails.origin.name }}</a
+      >
+    </ng-container>
+    <ng-template #noName>
+      {{ characterDetails.origin.name }}
+    </ng-template>
+  </p>
+  <p>
+    Location:
+    <ng-container *ngIf="characterDetails.location.url; else noName">
+      <a
+        [routerLink]="
+          '/locations/' + getIdByLink(characterDetails.location.url)
+        "
+      >
+        {{ characterDetails.location.name }}</a
+      >
+    </ng-container>
+    <ng-template #noName>
+      {{ characterDetails.location.name }}
+    </ng-template>
+  </p>
+  <div class="episodes-container">
+    Episodes:
+    <div *ngFor="let episode of characterDetails.episode">
+      <a [routerLink]="'/episodes/' + getIdByLink(episode)"
+        >Episode {{ getIdByLink(episode) }}</a
+      >
+    </div>
+  </div>
+</div>

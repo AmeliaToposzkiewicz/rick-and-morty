@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Characters in Rick and Morty</h1>
+
+  <div class="table-navigation">
+    <button [disabled]="!prevPage" (click)="onPrevPage()">previous page</button>
+    <button [disabled]="!nextPage" (click)="onNextPage()">next page</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Species</th>
+        <th>Type</th>
+        <th>Gender</th>
+        <th>Origin</th>
+        <th>Location</th>
+        <th>Character image</th>
+        <th>Episodes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let character of charactersDetails">
+        <app-characters-table-row
+          class="row"
+          [character]="character"
+        ></app-characters-table-row>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

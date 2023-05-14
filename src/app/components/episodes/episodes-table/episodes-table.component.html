@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Rick and Morty episodes</h1>
+
+  <div class="table-navigation">
+    <button [disabled]="!prevPage" (click)="onPrevPage()">previous page</button>
+    <button [disabled]="!nextPage" (click)="onNextPage()">next page</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Air date</th>
+        <th>Episode</th>
+        <th>Characters</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let episode of episodesDetails">
+        <app-episodes-table-row
+          class="row"
+          [episode]="episode"
+        ></app-episodes-table-row>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

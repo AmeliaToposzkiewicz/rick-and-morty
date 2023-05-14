@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Locations in Rick and Morty</h1>
+
+  <div class="table-navigation">
+    <button [disabled]="!prevPage" (click)="onPrevPage()">previous page</button>
+    <button [disabled]="!nextPage" (click)="onNextPage()">next page</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Dimension</th>
+        <th>Residents</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let location of locationsDetails">
+        <app-location-table-row class="row" [location]="location">
+        </app-location-table-row>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

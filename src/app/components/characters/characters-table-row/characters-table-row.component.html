@@ -1,0 +1,52 @@
+<tr>
+  <td>
+    {{ character.id }}
+  </td>
+  <td>
+    <a [routerLink]="'/characters/' + character.id"> {{ character.name }}</a>
+  </td>
+  <td>
+    {{ character.status }}
+  </td>
+  <td>
+    {{ character.species }}
+  </td>
+  <td>
+    {{ character.type }}
+  </td>
+  <td>
+    {{ character.gender }}
+  </td>
+  <td>
+    <ng-container *ngIf="character.origin.url; else noName">
+      <a [routerLink]="'/locations/' + getIdByLink(character.origin.url)">
+        {{ character.origin.name }}</a
+      >
+    </ng-container>
+    <ng-template #noName>
+      {{ character.origin.name }}
+    </ng-template>
+  </td>
+  <td>
+    <ng-container *ngIf="character.location.url; else noName">
+      <a [routerLink]="'/locations/' + getIdByLink(character.location.url)">
+        {{ character.location.name }}</a
+      >
+    </ng-container>
+    <ng-template #noName>
+      {{ character.location.name }}
+    </ng-template>
+  </td>
+  <td>
+    <img [src]="character.image" [alt]="character.name" class="image" />
+  </td>
+  <td>
+    <div class="container">
+      <div *ngFor="let episode of character.episode">
+        <a [routerLink]="'/episodes/' + getIdByLink(episode)"
+          >Episode {{ getIdByLink(episode) }}</a
+        >
+      </div>
+    </div>
+  </td>
+</tr>

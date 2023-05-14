@@ -1,0 +1,23 @@
+<tr>
+  <td>
+    {{ episode.id }}
+  </td>
+  <td>
+    <a [routerLink]="'/episodes/' + episode.id"> {{ episode.name }}</a>
+  </td>
+  <td>
+    {{ episode.air_date }}
+  </td>
+  <td>
+    {{ episode.episode }}
+  </td>
+  <td>
+    <div class="container">
+      <div *ngFor="let character of episode.characters">
+        <a [routerLink]="'/characters/' + getIdByLink(character)"
+          >Character {{ getIdByLink(character) }}</a
+        >
+      </div>
+    </div>
+  </td>
+</tr>

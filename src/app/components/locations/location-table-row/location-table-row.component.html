@@ -1,0 +1,17 @@
+<tr>
+  <td>{{ location.id }}</td>
+  <td>
+    <a [routerLink]="'/locations/' + location.id"> {{ location.name }}</a>
+  </td>
+  <td>{{ location.type }}</td>
+  <td>{{ location.dimension }}</td>
+  <td>
+    <div class="residents-container">
+      <div *ngFor="let resident of location.residents">
+        <a [routerLink]="'/characters/' + getIdByLink(resident)">
+          Character {{ getIdByLink(resident) }}</a
+        >
+      </div>
+    </div>
+  </td>
+</tr>

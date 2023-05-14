@@ -1,0 +1,7 @@
+.image {
+  height: 60px;
+}
+.container {
+  max-height: 100px;
+  overflow-y: scroll;
+}

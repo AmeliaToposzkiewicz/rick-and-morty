@@ -1,0 +1,13 @@
+.table-navigation {
+  display: flex;
+  width: 300px;
+  margin: auto;
+  justify-content: space-around;
+}
+.container {
+  width: 600px;
+  margin: auto;
+}
+.row {
+  display: contents;
+}
